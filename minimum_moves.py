@@ -1,7 +1,9 @@
-a = [30523, 30424]
+a = [30523, 3042411]
 m = [41322, 532351]
 
 def minimum_moves(a, m):
+	if len(a) != len(m):
+		return 'Two arrays do not have a same length'
 	broken_a_total = split_item(a)
 	broken_m_total = split_item(m)
 	idx = 0
@@ -11,7 +13,7 @@ def minimum_moves(a, m):
 			min_moves += abs(int(broken_a_total[idx]) - int(broken_m_total[idx]))
 			idx += 1
 		else:
-			return 'Two arrays do not have a same length'
+			return 'Two broken arrays do not have a same length'
 	return min_moves
 
 def split_item(arr):
